@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router';
 import Header from './components/header';
 import HomePage from './pages/home';
 import ErrorPage from './pages/error';
@@ -11,13 +11,9 @@ const App = () => {
       <Header />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
-
-        {/* Auth routes */}
-        <Route path="/auth/login" element={<LoginPage />} />
-        <Route path="/auth/register" element={<RegisterPage />} />
-
-        {/* Unknown routes */}
+        <Route index element={<HomePage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
