@@ -12,12 +12,12 @@ import ErrorPage from './pages/error';
 import LoginPage from './pages/login';
 import RegisterPage from './pages/register';
 
-const ProtectedRoute = ({ children, path }) => {
+const ProtectedRoute = ({ children, redirect }) => {
   const isAuthenticated = true;
   const location = useLocation();
 
   if (!isAuthenticated) {
-    return <Navigate to={path} state={{ from: location }} />;
+    return <Navigate to={redirect} state={{ from: location }} />;
   }
 
   return children ? children : <Outlet />;
@@ -30,7 +30,7 @@ const App = () => {
 
       <Routes>
         {/* Protected routes */}
-        <Route element={<ProtectedRoute path="/login" />}>
+        <Route element={<ProtectedRoute redirect="/login" />}>
           <Route path="/" element={<HomePage />} />
         </Route>
 
