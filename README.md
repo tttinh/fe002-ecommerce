@@ -1,6 +1,6 @@
 # fe002-ecommerce
 
-A ecommerce website using Vite, ReactJS and TailwindCSS.
+A ecommerce website using Vite, ReactJS and TailwindCSS using following [tutorial](https://youtu.be/zyqkneMAnfc?si=CtsGhV0uOhfdDIjZ).
 
 ## Dependencies
 
